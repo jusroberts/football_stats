@@ -1,0 +1,21 @@
+= form_for @stat do |f|
+  - if @stat.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@stat.errors.count, "error")} prohibited this stat from being saved:"
+      %ul
+        - @stat.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :range
+    = f.number_field :range
+  .field
+    = f.label :value
+    = f.text_field :value
+  .actions
+    = f.submit 'Save'

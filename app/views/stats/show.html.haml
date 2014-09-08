@@ -1,0 +1,12 @@
+%p#notice= notice
+-require 'open-uri'
+%h1=@stat.name
+-#-build_player_hash(@stat).each do |k, v|
+-#  .player
+-#    =k
+-#    =v
+=line_chart build_player_data(@stat)
+
+= link_to 'Edit', edit_stat_path(@stat)
+\|
+= link_to 'Back', stats_path
